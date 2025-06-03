@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Devesh Sharma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('contact') }}" class="active">Contact</a>
+        </nav>
+    </header>
+ <div class="contact-info">
+        <h2>Let's Connect 🤝</h2>
+        <p><strong>📧:</strong> <a href="mailto:devesh2003sharma@gmail.com">devesh2003sharma@gmail.com</a></p>
+        <p><strong>🌐:</strong> <a href="https://www.linkedin.com/in/devesh-sharma-a45427304/" target="_blank">linkedin.com/in/devesh-sharma-a45427304</a></p>
+        <p><strong>💼:</strong> <a href="https://github.com/devesh-sharma210" target="_blank">github.com/devesh-sharma210</a></p>
+    </div>
+
+    <section>
+        <h1>📬 Get in Touch</h1>
+        <form method="post" action="{{ url_for('contact') }}">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 Devesh Sharma — All rights reserved.
+    </footer>
+</body>
+</html>

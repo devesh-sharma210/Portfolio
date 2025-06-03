@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Devesh Sharma | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('projects') }}">Projects</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+<section class="hero-section">
+  <div class="hero-overlay">
+    <!-- Typing animation only for this line -->
+    <h1 class="hero-title">
+      <span id="typed-title"></span><span class="cursor">|</span>
+    </h1>
+
+    <!-- Smooth fade-up for rest -->
+    <p class="hero-subtitle fade-up delay-1">A passionate Python developer who loves building web applications with Flask.</p>
+    <p class="hero-subtitle fade-up delay-2">I enjoy solving problems, creating user-friendly websites, and learning new tech.</p>
+  </div>
+</section>
+
+<section class="skills-section">
+    <h2>🚀 My Skills</h2>
+
+    <div class="skills-wrapper">
+        <!-- Image on the left -->
+        <div class="skill-image">
+            <img src="{{ url_for('static', filename='skills.jpg') }}" alt="Skill Illustration">
+        </div>
+
+        <!-- Text on the right -->
+        <div class="skill-box">
+            <div class="skill-item">
+                <span class="arrow">➜</span>
+                <div>
+                    <h3>HTML & CSS</h3>
+                    <p>Designing clean and responsive web layouts with modern styling practices.</p>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span class="arrow">➜</span>
+                <div>
+                    <h3>Python</h3>
+                    <p>Writing efficient code for automation, scripting, and backend development using Flask.</p>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span class="arrow">➜</span>
+                <div>
+                    <h3>UI/UX Design</h3>
+                    <p>Designing user-friendly interfaces with attention to usability and aesthetics.</p>
+                </div>
+            </div>
+            <div class="skill-item">
+                <span class="arrow">➜</span>
+                <div>
+                    <h3>Problem Solving</h3>
+                    <p>Applying logical thinking and algorithms to solve real-world coding challenges.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="certificates-section">
+  <h2>💼 Experience</h2>
+
+  <div class="certificates-wrapper">
+    
+    <!-- LEFT SIDE: Logos -->
+<div class="language-logos">
+  <div class="language-card"><img src="{{ url_for('static', filename='html-5.png') }}" alt="HTML"></div>
+  <div class="language-card"><img src="{{ url_for('static', filename='css-3.png') }}" alt="CSS"></div>
+  <div class="language-card"><img src="{{ url_for('static', filename='js.png') }}" alt="JS"></div>
+  <div class="language-card"><img src="{{ url_for('static', filename='python.png') }}" alt="Python"></div>
+  <div class="language-card"><img src="{{ url_for('static', filename='MY SQL.png') }}" alt="MySQL"></div>
+   <div class="language-card"><img src="{{ url_for('static', filename='uiux.png') }}" alt="ux ui"></div>
+</div>
+
+    <!-- RIGHT SIDE: Certificates Column -->
+ <div class="certificates-right">
+
+  <div class="certificate-card">
+    <div class="experience-card">
+      <div class="experience-header">
+        <img src="{{ url_for('static', filename='reactjs.png') }}" alt="Internpe Logo">
+        <div class="experience-info">
+          <h3>React JS Certification</h3>
+          <p class="experience-date"><em>Infosys — January 2023 to May 2023</em></p>
+        </div>
+      </div>
+      <ul class="experience-points">
+        <li>Built dynamic and reusable user interface components using React's component-based architecture to improve front-end scalability and maintainability.</li>
+        <li>Gained hands-on experience with React hooks, props, and state management, enabling the development of interactive and responsive web applications.</li>
+      </ul>
+      <a href="https://drive.google.com/file/d/1Wnex84aT1-V0OCJ3wzR5z4i1EkGjwAVG/view?usp=drivesdk" target="_blank" class="certificate-link">
+      📄 View Certificate
+    </a>
+    </div>
+  </div>
+
+  <div class="certificate-card">
+    <div class="experience-card">
+      <div class="experience-header">
+        <img src="{{ url_for('static', filename='UIUX.svg') }}" alt="Internpe Logo">
+        <div class="experience-info">
+          <h3>UI UX Intern</h3>
+          <p class="experience-date"><em>Teachnook — June 2024 to July 2024</em></p>
+        </div>
+      </div>
+      <ul class="experience-points">
+        <li>Learned industry-standard design tools such as Figma to create wireframes, prototypes, and high-fidelity mockups for responsive web and mobile interfaces.</li>
+        <li>Applied user-centered design principles to improve usability and accessibility, focusing on intuitive navigation and user satisfaction through real-world design projects.</li>
+      </ul>
+      <a href="https://drive.google.com/file/d/1pzhfEOCC-4J-Gg1P1zZpm7baQUuyG9Mh/view?usp=drivesdk" target="_blank" class="certificate-link">
+      📄 View Certificate
+    </a>
+    </div>
+  </div>
+
+</div>
+
+
+    </div> <!-- end of certificates-right -->
+
+  </div> <!-- end of certificates-wrapper -->
+</section>
+
+
+
+<script>
+  const text = "👋 Hi, I'm Devesh Sharma";
+  const titleEl = document.getElementById("typed-title");
+  const cursorEl = document.querySelector(".cursor");
+  let index = 0;
+  let typing = true;
+
+  function typeLoop() {
+    if (typing) {
+      if (index < text.length) {
+        titleEl.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeLoop, 100);
+      } else {
+        typing = false;
+        setTimeout(typeLoop, 2000); // pause before erasing
+      }
+    } else {
+      if (index > 0) {
+        titleEl.textContent = text.substring(0, index - 1);
+        index--;
+        setTimeout(typeLoop, 50);
+      } else {
+        typing = true;
+        setTimeout(typeLoop, 500); // pause before retyping
+      }
+    }
+  }
+
+  window.onload = typeLoop;
+</script>
+
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Devesh Sharma — All rights reserved.
+    </footer>
+
+</body>
+</html>

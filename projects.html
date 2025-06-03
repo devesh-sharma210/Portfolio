@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects | Devesh Sharma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('projects') }}" class="active">Projects</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </nav>
+    </header>
+
+<section>
+    <h1>🛠️ Projects</h1>
+
+    <div class="project-list">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='healthcare-chatbot.png') }}" alt="Healthcare Chatbot Image" class="project-img">
+            <h2>Healthcare Assistance Chatbot</h2>
+            <p><strong>Duration:</strong> Aug 2024 - Dec 2024</p>
+            <p>Healthcare chatbots are virtual assistants that help patients and medical providers with a variety of tasks.</p>
+            <p><strong>Technologies:</strong> Python, NLP, Chatbot Framework</p>
+            <a href="https://github.com/devesh-sharma210/Healthcare_Assistant" target="_blank" class="project-btn">🔗 View Project</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='clone.jpg') }}" alt="Ticket Booking System" class="project-img">
+            <h2>Clone of Movie Ticket Booking System</h2>
+            <p><strong>Duration:</strong> Oct 2023 – Nov 2023</p>
+            <p>A web-based system for booking movie tickets online for cinema halls.</p>
+            <p><strong>Technologies:</strong> HTML, CSS, Python, Flask</p>
+            <a href="https://github.com/devesh-sharma210/dev" target="_blank" class="project-btn">🔗 View Project</a>
+        </div>
+
+    </div>
+</section>
+
+
+
+    <footer>
+        &copy; 2025 Devesh Sharma — All rights reserved.
+    </footer>
+</body>
+</html>
